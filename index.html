@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body
+<body>
 	<div class="d-flex">
 		<img src="https://media.giphy.com/media/KIkROCIBtOgRMWOefD/giphy.gif" alt="this slowpoke moves"  width="250" />
 		<img src="https://1.bp.blogspot.com/--8WCfjiMqBg/WoQ1uS9WXAI/AAAAAAAATv0/236viNECG_AjkLN7kSPj1ALJWk2KHxF-wCLcBGAs/s1600/JIGSAW.gif" alt="this slowpoke moves"  width="250" />
@@ -19,6 +19,20 @@
 		<img src="https://media.giphy.com/media/KIkROCIBtOgRMWOefD/giphy.gif" alt="this slowpoke moves"  width="250" />
 		<img src="https://1.bp.blogspot.com/--8WCfjiMqBg/WoQ1uS9WXAI/AAAAAAAATv0/236viNECG_AjkLN7kSPj1ALJWk2KHxF-wCLcBGAs/s1600/JIGSAW.gif" alt="this slowpoke moves"  width="250" />
 	</div>
+
+  <h3><center>JavaScript Click Counter</center></h3>
+  <div>
+      <center><h3 id="counter-label">0</h3></center>
+  </div>
+  <center>
+      <div>
+          <button onclick="incrementClick()">Click Me</button>
+          <button onclick="resetCounter()">Reset</button>
+      </div>
+  </center>
+
+  
+
 
 	
   <script src="script.js"></script>
@@ -29,6 +43,24 @@
   teal, blue, blurple, magenta, pink!
   -->
   <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> 
+
+  <script>
+    var counterVal = 0;
+
+  function incrementClick() {
+      updateDisplay(++counterVal);
+  }
+
+  function resetCounter() {
+      counterVal = 0;
+      updateDisplay(counterVal);
+  }
+
+  function updateDisplay(val) {
+      document.getElementById("counter-label").innerHTML = val
+  }
+
+  </script>
 </body>
 
 </html>
