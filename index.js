@@ -55,12 +55,17 @@ router.post('/api/:nome/:dado_tomado', async (req, res) => {
 });
 app.use('/api', router);
 
-router.get('/api_all', async (req, res) => {
-	let data = await db.list();
+router.get('/yew', async (req, res) => {
+	let keys = await db.list();
 
-    res.json(data);
+	let data = {};
+	return keys.forEach( async element => {
+		data[element] = await db.get(element);
+	});
+	
+    return res.json(data);
 });
-app.use('/api_all', router);
+app.use('/yew', router);
 
 let server = app.listen(3000, () => {
   console.log("App server is running on port 3000");
